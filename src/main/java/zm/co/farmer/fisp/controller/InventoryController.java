@@ -64,8 +64,6 @@ public class InventoryController {
         inventoryItem.setType(name);
         
         inventoryItem = inventoryService.addInventoryItem(inventoryItem);
-        
-        System.out.println(inventoryItem);
 
         return "redirect:/inventory";
     }

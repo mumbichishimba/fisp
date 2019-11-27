@@ -42,7 +42,7 @@ public class MyConnection {
             conn = DriverManager.getConnection(database, dbuser, dbpassword);  
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return conn;

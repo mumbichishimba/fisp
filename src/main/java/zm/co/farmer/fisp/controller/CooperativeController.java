@@ -53,8 +53,6 @@ public class CooperativeController {
     public String addCooperativeAction(Model model, @CookieValue("user_session_id") String username,
             @ModelAttribute("cooperative") Govtcoperative govtcoperative) {
 
-        System.out.println(govtcoperative);
-
         User user = userService.getUserByUsername(username);
         model.addAttribute("user", user);
         
