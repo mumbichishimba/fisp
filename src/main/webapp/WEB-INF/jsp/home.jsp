@@ -13,8 +13,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="#">Cooperatives</a><br/>
-        <a href="#">Implements</a><br/>
+        <a href="${contextPath}/cooperatives">Cooperatives</a><br/>
+        <a href="${contextPath}/inventory">Implements</a><br/>
         <a href="${contextPath}/users">Users</a><br/>
         
     </body>

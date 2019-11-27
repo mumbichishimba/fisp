@@ -51,7 +51,7 @@ public class InventoryController {
 
         User user = userService.getUserByUsername(username);
 
-        boolean avail = (available.equalsIgnoreCase("1")) ? true : false;
+        boolean avail = (available.equalsIgnoreCase("1"));
 
         InventoryItem inventoryItem = new InventoryItem();
         inventoryItem.setAvailable(avail);
@@ -71,7 +71,10 @@ public class InventoryController {
     }
     
     @RequestMapping(path = {"/inventory"})
-    public String pageone(Model model) {
+    public String pageone(Model model, @CookieValue("user_session_id") String username) {
+
+        User user = userService.getUserByUsername(username);
+        model.addAttribute("user", user);
 
         // Inject user list
         model.addAttribute("inventory", inventoryService.getAllInventoryItems());

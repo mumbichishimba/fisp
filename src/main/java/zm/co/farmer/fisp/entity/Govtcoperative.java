@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -23,6 +24,7 @@ public class Govtcoperative {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date datecreated;
     private String location;
 
