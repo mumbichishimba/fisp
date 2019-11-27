@@ -15,6 +15,7 @@
     <body>
         <h2>Users</h2>
         
+        <a href="${contextPath}/addcooperative">+ Add Cooperative</a> &nbsp; <a href="${contextPath}/home">Home</a> &nbsp;
         <a href="${contextPath}/adduser">+ Add User</a><br/><br/>
         <table border="1">
             <thead>

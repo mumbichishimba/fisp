@@ -15,6 +15,7 @@
     <body id="page-top">
 
 
+        <a href="${contextPath}/addcooperative">+ Add Cooperative</a> &nbsp; <a href="${contextPath}/home">Home</a> <br/><br/>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Inventory</h6>
