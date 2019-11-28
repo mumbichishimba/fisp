@@ -11,14 +11,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add inventory item</title>
+        <%@include file="fragments/css.jsp" %>
     </head>
     <body id="page-top">
+        <%@include file="fragments/header.jsp" %>
+        <br>
+        <div class="showback">
+            <h4><i class="fa fa-angle-right"></i> Add Cooperative </h4><br>
+            <div class="table-responsive">
 
-        <div class="card mb-4">
-            <div class="card-header">
-                Add Inventory Item
-            </div>
-            <div class="card-body">
                 <form method="POST" action="${contextPath}/addcooperative">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -37,7 +38,8 @@
                     </div>
                 </form>
             </div>
-        </div>
-
-    </body>
-</html>
+            <div>
+                <%@include file="fragments/footer.jsp" %>
+                <%@include file="fragments/js.jsp" %>
+                </body>
+                </html>

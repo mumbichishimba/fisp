@@ -3,19 +3,20 @@
     Created on : Nov 20, 2019, 9:14:38 PM
     Author     : Mumbi Chishimba
 --%>
-
 <%@include file="fragments/requirements.jsp" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JSP Page</title> 
+        <%@include file="fragments/css.jsp" %>
     </head>
     <body>
-        <a href="${contextPath}/cooperatives">Cooperatives</a><br/>
-        <a href="${contextPath}/inventory">Implements</a><br/>
-        <a href="${contextPath}/users">Users</a><br/>
-        
+         <%@include file="fragments/header.jsp" %>
+         <h2> Home </h2>
+         <%@include file="fragments/footer.jsp" %>
+         <%@include file="fragments/js.jsp" %>
     </body>
 </html>

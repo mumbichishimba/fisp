@@ -11,30 +11,36 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%@include file="fragments/css.jsp" %>
     </head>
     <body>
-        <h2>Users</h2>
-        
-        <a href="${contextPath}/addcooperative">+ Add Cooperative</a> &nbsp; <a href="${contextPath}/home">Home</a> <br/><br/>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date Created</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${cooperatives}" var="u">
-                    <tr>
-                        <td>${u.name}</td>
-                        <td>${u.datecreated}</td>
-                        <td>${u.location}</td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+        <%@include file="fragments/header.jsp" %>
+        <div class="showback">
+            <h4><i class="fa fa-angle-right"></i> Add Cooperative </h4><br>
+            <div class="table-responsive">
 
-
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date Created</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${cooperatives}" var="u">
+                            <tr>
+                                <td>${u.name}</td>
+                                <td>${u.datecreated}</td>
+                                <td>${u.location}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+                <a href="${contextPath}/addcooperative" class="btn btn-success"> Add Cooperative</a>
+            </div>
+        </div>
+        <%@include file="fragments/footer.jsp" %>
+        <%@include file="fragments/js.jsp" %>
     </body>
 </html>
