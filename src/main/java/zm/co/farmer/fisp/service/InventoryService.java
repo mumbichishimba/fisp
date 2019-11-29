@@ -35,4 +35,12 @@ public class InventoryService {
     public InventoryItem addInventoryItem(InventoryItem inventoryItem) {
         return inventoryItemRepository.save(inventoryItem);
     }
+
+    public InventoryItem getInventoryItemById(int id) {
+        return inventoryItemRepository.findById(id).get();
+    }
+
+    public void deleteInventoryItem(InventoryItem inventoryItem) {
+        inventoryItemRepository.delete(inventoryItem);
+    }
 }

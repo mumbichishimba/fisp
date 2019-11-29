@@ -30,7 +30,7 @@ public class InventoryItem {
     private String quantitytype;
     private String batchid;
     private String barcodenumber;
-    private boolean available;
+    private Boolean available;
 
     public InventoryItem() {
     }
@@ -99,11 +99,11 @@ public class InventoryItem {
         this.barcodenumber = barcodenumber;
     }  
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 
