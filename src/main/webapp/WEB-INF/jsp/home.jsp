@@ -15,6 +15,7 @@
     </head>
     <body>
          <%@include file="fragments/header.jsp" %>
+         <br>
          <h2> Home </h2>
          <%@include file="fragments/footer.jsp" %>
          <%@include file="fragments/js.jsp" %>

@@ -17,7 +17,7 @@
         <%@include file="fragments/header.jsp" %>
         <br>
         &nbsp;
-        <div class="panel panel-info">
+        <div class="panel panel-default">
             <div class="panel-heading">
               <h4><i class="fa fa-angle-right"></i>Co-operative </h4><br>
             </div>

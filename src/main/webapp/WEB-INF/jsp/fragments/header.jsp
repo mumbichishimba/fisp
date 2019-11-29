@@ -21,11 +21,12 @@
                
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-3x"></i>
+                        <i class="fa fa-user fa-2x"></i>
                     </a>
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
-                        
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>${user.firstname} ${user.lastname}</a>
+                        </li>
                         <li class="divider"></li>
                         <li><a href="${contextPath}/logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
@@ -49,12 +50,6 @@
                         <!-- user image section-->
                         <div class="user-section">
 
-                            <div class="user-info">
-                                <div><font color="white">${user.firstname} ${user.lastname}</font></div>
-                                <div class="user-text-online">
-                                    &nbsp;
-                                </div>
-                            </div>
                         </div>
                         <!--end user image section-->
                     </li>

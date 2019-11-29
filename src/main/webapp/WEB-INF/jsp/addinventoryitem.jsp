@@ -19,7 +19,7 @@
         <br>
         <br>
         &nbsp;
-        <div class="panel panel-info">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4><i class="fa fa-angle-right"></i> Add Inventory Item </h4><br>
             </div>
