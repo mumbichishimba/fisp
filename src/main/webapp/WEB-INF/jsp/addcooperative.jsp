@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add inventory item</title>
+        <title>Add Co-operative</title>
         <%@include file="fragments/css.jsp" %>
     </head>
     <body id="page-top">
@@ -20,12 +20,12 @@
         &nbsp;
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h4><i class="fa fa-angle-right"></i> Add Cooperative </h4><br>
+                <h4><i class="fa fa-angle-right"></i> Add Co-operative </h4><br>
             </div>
             <div class="panel-body">
                 <div class="showback">
                     
-                    <div class="table-responsive">
+                    <div style="width: 50%;">
 
                         <form method="POST" action="${contextPath}/addcooperative">
                             <div class="form-group">

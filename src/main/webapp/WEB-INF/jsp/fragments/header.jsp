@@ -48,9 +48,7 @@
                     <li>
                         <!-- user image section-->
                         <div class="user-section">
-                            <div class="user-section-inner">
-                                <img src="assets/img/user.jpg" alt="">
-                            </div>
+
                             <div class="user-info">
                                 <div><font color="white">${user.firstname} ${user.lastname}</font></div>
                                 <div class="user-text-online">

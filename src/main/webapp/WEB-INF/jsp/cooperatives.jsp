@@ -19,7 +19,7 @@
         &nbsp;
         <div class="panel panel-info">
             <div class="panel-heading">
-              <h4><i class="fa fa-angle-right"></i> Add Cooperative </h4><br>
+              <h4><i class="fa fa-angle-right"></i>Co-operative </h4><br>
             </div>
             <div class="panel-body">
                 <div class="showback">

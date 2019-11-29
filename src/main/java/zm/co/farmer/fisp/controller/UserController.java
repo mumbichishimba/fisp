@@ -21,7 +21,7 @@ import zm.co.farmer.fisp.service.UserService;
  */
 @Controller
 public class UserController {
-    
+
     @Autowired
     private UserService userService;
 
@@ -30,14 +30,18 @@ public class UserController {
 
         User user = userService.getUserByUsername(username);
         model.addAttribute("user", user);
-        
+
         model.addAttribute("users", userService.getAllUsers());
-        
+
         return "users";
     }
 
     @RequestMapping(path = {"/adduser"}, method = RequestMethod.GET)
-    public String addUser(Model model) {
+    public String addUser(Model model, @CookieValue("user_session_id") String username) {
+
+        User user = userService.getUserByUsername(username);
+        model.addAttribute("user", user);
+
         return "adduser";
     }
 }
