@@ -61,7 +61,7 @@ public class InventoryController {
         inventoryItem.setQuantity(quantity);
         inventoryItem.setQuantitytype(quantitytype);
         inventoryItem.setSupplier(supplier);
-        inventoryItem.setType(name);
+        inventoryItem.setType(itemtype);
         
         inventoryItem = inventoryService.addInventoryItem(inventoryItem);
 

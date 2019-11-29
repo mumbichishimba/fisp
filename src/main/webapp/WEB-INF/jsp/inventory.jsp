@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Users</title>
+        <title>Inventory</title>
         <%@include file="fragments/css.jsp" %>
     </head>
     <body id="page-top">
