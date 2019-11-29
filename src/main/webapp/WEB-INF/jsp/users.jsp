@@ -17,37 +17,48 @@
         <%@include file="fragments/header.jsp" %>
 
         <br/>
+        <br>
+        &nbsp;
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4><i class="fa fa-angle-right"></i> Users </h4>
+            </div>
+            <div class="panel-body">
 
-        <div class="showback">
-            <h4><i class="fa fa-angle-right"></i> Users </h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Date of Birth</th>
-                        <th>Email</th>
-                        <th>Gender</th>
-                        <th>Username</th>
-                        <th>Role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach items="${users}" var="u">
-                        <tr>
-                            <td>${u.firstname} ${u.othername} ${u.lastname}</td>
-                            <td>${u.address}</td>
-                            <td>${u.dateofbirth}</td>
-                            <td>${u.email}</td>
-                            <td>${u.gender}</td>
-                            <td>${u.username}</td>
-                            <td>${u.userrole}</td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-           
-            <a href="${contextPath}/adduser" class="btn btn-success"> Add User</a><br/><br/>
+                <div class="showback">
+                    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Date of Birth</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Username</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${users}" var="u">
+                                <tr>
+                                    <td>${u.firstname} ${u.othername} ${u.lastname}</td>
+                                    <td>${u.address}</td>
+                                    <td>${u.dateofbirth}</td>
+                                    <td>${u.email}</td>
+                                    <td>${u.gender}</td>
+                                    <td>${u.username}</td>
+                                    <td>${u.userrole}</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+
+                    <a href="${contextPath}/adduser" class="btn btn-success"> Add User</a><br/><br/>
+                </div>
+
+            </div>
+
         </div>
 
         <%@include file="fragments/footer.jsp" %>

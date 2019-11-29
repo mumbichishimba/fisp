@@ -15,31 +15,43 @@
     </head>
     <body>
         <%@include file="fragments/header.jsp" %>
-        <div class="showback">
-            <h4><i class="fa fa-angle-right"></i> Add Cooperative </h4><br>
-            <div class="table-responsive">
-
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Date Created</th>
-                            <th>Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${cooperatives}" var="u">
-                            <tr>
-                                <td>${u.name}</td>
-                                <td>${u.datecreated}</td>
-                                <td>${u.location}</td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
-                <a href="${contextPath}/addcooperative" class="btn btn-success"> Add Cooperative</a>
+        <br>
+        &nbsp;
+        <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4><i class="fa fa-angle-right"></i> Add Cooperative </h4><br>
             </div>
+            <div class="panel-body">
+                <div class="showback">
+                    
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date Created</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${cooperatives}" var="u">
+                                    <tr>
+                                        <td>${u.name}</td>
+                                        <td>${u.datecreated}</td>
+                                        <td>${u.location}</td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                        <a href="${contextPath}/addcooperative" class="btn btn-success"> Add Cooperative</a>
+                    </div>
+                </div>  
+
+            </div>
+
         </div>
+
         <%@include file="fragments/footer.jsp" %>
         <%@include file="fragments/js.jsp" %>
     </body>

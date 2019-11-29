@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="${contextPath}/home">
-                    <img src="assets/img/logo.png" alt="" />
+                    <h2><b><font color="white"> FISP </font></b></h2>
                 </a>
             </div>
             <!-- end navbar-header -->
@@ -52,9 +52,9 @@
                                 <img src="assets/img/user.jpg" alt="">
                             </div>
                             <div class="user-info">
-                                <div>${user.firstname} ${user.lastname}</div>
+                                <div><font color="white">${user.firstname} ${user.lastname}</font></div>
                                 <div class="user-text-online">
-                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                    &nbsp;
                                 </div>
                             </div>
                         </div>
@@ -81,3 +81,4 @@
             <!-- end sidebar-collapse -->
         </nav>
         <!-- end navbar side -->
+         <div id="page-wrapper">

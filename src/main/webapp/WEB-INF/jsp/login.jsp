@@ -7,30 +7,64 @@
 <%@include file="fragments/requirements.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
-    </head>
-    <body>
-        <h2>Hello World!</h2>
-        <form class="user" method="POST" action="${contextPath}/login">
-            <table border="1">
-                <tbody>
-                    <tr>
-                        <th>Username</th>
-                        <td><input name="username" type="text" class="form-control form-control-user" placeholder="Enter Username..."></td>
-                    </tr>
-                    <tr>
-                        <th>Password</th>
-                        <td><input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="submit" value="Login" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
 
-    </body>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootsrtap Free Admin Template - SIMINTA | Admin Dashboad Template</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="${contextPath}/assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="${contextPath}/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="${contextPath}/assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+   <link href="${contextPath}/assets/css/style.css" rel="stylesheet" />
+    <link href="${contextPath}/assets/css/main-style.css" rel="stylesheet" />
+
+</head>
+
+<body class="body-Login-back">
+
+    <div class="container">
+       
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center logo-margin ">
+            
+                </div>
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">                  
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="user" method="POST" action="${contextPath}/login">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Core Scripts - Include with every page -->
+    <script src="${contextPath}/assets/plugins/jquery-1.10.2.js"></script>
+    <script src="${contextPath}/assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="${contextPath}/assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+</body>
+
 </html>
