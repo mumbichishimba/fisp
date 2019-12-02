@@ -26,6 +26,9 @@ public class InventoryWebService {
      public InventoryResponse[] sendInventoryItemsToFarmer(InventoryItem[] inventoryItems){
          
         Client client = ClientBuilder.newClient();
+        
+        String remoteUrl = getRemoteUrl();
+        
         WebTarget webTarget = client.target("http://172.17.2.109:8089/farmnetwebservice/rest/InventoryItem");
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
          
@@ -57,5 +60,10 @@ public class InventoryWebService {
         }
 
         return inventoryResponses;
+    }
+
+    private String getRemoteUrl() {
+        
+        return "";
     }
 }

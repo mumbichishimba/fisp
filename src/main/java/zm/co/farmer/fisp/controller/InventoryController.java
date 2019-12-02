@@ -5,9 +5,6 @@
  */
 package zm.co.farmer.fisp.controller;
 
-import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -117,7 +114,8 @@ public class InventoryController {
             for (int j = 0; j < inv.length; j++) {
                 InventoryItem inventoryItem = inv[j];
                 if(response.getStatus().equals("success")&&inventoryItem.getBarcodenumber().equals(response.getBarcodenumber())){
-                    inventoryService.deleteInventoryItem(inventoryItem);
+                    inventoryItem.setAvailable(false);
+                    inventoryService.addInventoryItem(inventoryItem);
                     continue;
                 }
             }

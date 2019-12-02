@@ -5,6 +5,7 @@
  */
 package zm.co.farmer.fisp.repository;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import zm.co.farmer.fisp.entity.InventoryItem;
 
@@ -13,5 +14,7 @@ import zm.co.farmer.fisp.entity.InventoryItem;
  * @author CHILIKWEM
  */
 public interface InventoryItemRepository extends CrudRepository<InventoryItem, Integer> {
+
+    public List<InventoryItem> findByAvailable(boolean b);
     
 }
