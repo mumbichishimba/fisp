@@ -20,11 +20,11 @@
         &nbsp;
         <div class="panel panel-default">
             <div class="panel-heading">
-                 <h4><i class="fa fa-angle-right"></i> Implements </h4>
+                <h4><i class="fa fa-angle-right"></i> Implements </h4>
             </div>
             <div class="panel-body">
                 <div class="showback">
-                   
+
                     <div class="table-responsive">
 
                         <form action="${contextPath}/senttofarmer" id="form">
@@ -37,6 +37,7 @@
                                         <th>Suppler</th>
                                         <th>Quantity </th>
                                         <th>Bar code</th>
+                                        <th>Available</th>
 
                                     </tr>
                                 </thead>
@@ -44,13 +45,13 @@
 
                                     <c:forEach items="${inventory}" var="a">
                                         <tr>
-                                            <td><input id="impid" type="checkbox" name="impid" class="form-control" value="${a.id}" /></td>
+                                            <td> <c:if test="${a.available==false}"><i class="fa fa-check" aria-hidden="true"></i></c:if> <c:if test="${a.available}"> <input id="impid" type="checkbox" name="impid" value="${a.id}" /></c:if></td>
                                             <td>${a.name}</td>
                                             <td>${a.type}</td>
                                             <td>${a.supplier}</td>
                                             <td>${a.quantity} ${a.quantitytype}</td>
                                             <td>${a.barcodenumber}</td>
-
+                                            <td><c:if test="${a.available==false}">No</c:if> <c:if test="${a.available}"> Yes </c:if></td>
                                         </tr>
                                     </c:forEach>
 

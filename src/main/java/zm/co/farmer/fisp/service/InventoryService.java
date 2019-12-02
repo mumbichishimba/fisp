@@ -32,6 +32,10 @@ public class InventoryService {
         return Lists.newArrayList(inventoryItemRepository.findAll());
     }
 
+    
+    public List<InventoryItem> getAvailableInventoryItems() {
+        return inventoryItemRepository.findByAvailable(true);
+    }
     public InventoryItem addInventoryItem(InventoryItem inventoryItem) {
         return inventoryItemRepository.save(inventoryItem);
     }
