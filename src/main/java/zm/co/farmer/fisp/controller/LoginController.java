@@ -23,8 +23,12 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import zm.co.farmer.fisp.entity.Govtcoperative;
+import zm.co.farmer.fisp.entity.InventoryItem;
 import zm.co.farmer.fisp.entity.User;
 import zm.co.farmer.fisp.service.FarmService;
+import zm.co.farmer.fisp.service.GovtcoperativeService;
+import zm.co.farmer.fisp.service.InventoryService;
 import zm.co.farmer.fisp.service.UserService;
 import zm.co.farmer.fisp.service.YieldService;
 import zm.co.farmer.fisp.util.GenericDataService;
@@ -44,6 +48,10 @@ public class LoginController {
     private FarmService farmService;
     @Autowired
     private GenericDataService genericDataService;
+    @Autowired
+    private GovtcoperativeService govtcoperativeService;
+    @Autowired
+    private InventoryService inventoryService;
 
     @RequestMapping(path = {"/"})
     public String homepage(Model model) {
@@ -143,6 +151,29 @@ public class LoginController {
         model.addAttribute("yieldvalues", gson.toJson(values));
         model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));
         model.addAttribute("max", max + ((int) (max * .1f)));
+        
+        // Add Users
+        List<User> users = userService.getAllUsers();
+        int totalUsers = users.size();
+        model.addAttribute("usertotal", totalUsers);
+        
+        // Add Cooperatves
+        List<Govtcoperative> cooperatives = govtcoperativeService.getAllGovtcoperative();
+        int cooperativesTotal = cooperatives.size();
+        model.addAttribute("cooperativesTotal", cooperativesTotal);
+        
+        List<InventoryItem> inventoryItems = inventoryService.getAllInventoryItems();
+        int available=0, given = 0;
+        
+        for (InventoryItem inventoryItem : inventoryItems) {
+            if(inventoryItem.isAvailable()){
+                available++;
+            }else{
+                given++;
+            }
+        }        
+        model.addAttribute("available", available);
+        model.addAttribute("given", given);
 
         return "home";
     }
