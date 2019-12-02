@@ -6,8 +6,6 @@
 package zm.co.farmer.fisp.webservice;
 
 import com.google.gson.Gson;
-import zm.co.farmer.fisp.entity.InventoryItem;
-import zm.co.farmer.fisp.webservice.entity.InventoryResponse;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -17,12 +15,15 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import zm.co.farmer.fisp.entity.InventoryItem;
+import zm.co.farmer.fisp.webservice.entity.InventoryResponse;
 
 /**
  *
  * @author mumbi
  */
 public class InventoryWebService {
+    
      public InventoryResponse[] sendInventoryItemsToFarmer(InventoryItem[] inventoryItems){
          
         Client client = ClientBuilder.newClient();
@@ -32,6 +33,7 @@ public class InventoryWebService {
         Response response
                 = invocationBuilder
                         .post(Entity.entity(inventoryItems, MediaType.APPLICATION_JSON));
+        
         String r = response.readEntity(String.class);
         
         client.close();
