@@ -23,28 +23,30 @@ import zm.co.farmer.fisp.webservice.entity.InventoryResponse;
  * @author mumbi
  */
 public class InventoryWebService {
-    
-     public InventoryResponse[] sendInventoryItemsToFarmer(InventoryItem[] inventoryItems){
-         
+
+    public static final String IPADDRESS = "172.17.2.109";
+
+    public InventoryResponse[] sendInventoryItemsToFarmer(InventoryItem[] inventoryItems) {
+
         Client client = ClientBuilder.newClient();
-        
+
         String remoteUrl = getRemoteUrl();
-        
-        WebTarget webTarget = client.target("http://172.17.2.109:8089/farmnetwebservice/rest/InventoryItem");
+
+        WebTarget webTarget = client.target("http://"+IPADDRESS+":8089/farmnetwebservice/rest/InventoryItem");
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
-         
+
         Response response
                 = invocationBuilder
                         .post(Entity.entity(inventoryItems, MediaType.APPLICATION_JSON));
-        
+
         String r = response.readEntity(String.class);
-        
+
         client.close();
-        
+
         return getResponsesFromJson(r);
-     }
-     
-     private InventoryResponse[] getResponsesFromJson(String r) {
+    }
+
+    private InventoryResponse[] getResponsesFromJson(String r) {
 
         JSONArray array = new JSONArray(r);
 
@@ -65,7 +67,7 @@ public class InventoryWebService {
     }
 
     private String getRemoteUrl() {
-        
+
         return "";
     }
 }

@@ -71,6 +71,7 @@
         <script src="${contextPath}/chart/Chart.min.js"></script>
         <script src="${contextPath}/chart/utils.js"></script>
         <script>
+            var values = ${tabvalues};
             var color = Chart.helpers.color;
             var barChartData = {
                 labels: ${lables},
@@ -98,6 +99,15 @@
                         title: {
                             display: true,
                             text: 'Implements'
+                        },
+                        scales: {
+                            yAxes: [{
+                                    display: true,
+                                    ticks: {
+                                        beginAtZero: true,
+                                        stepValue: 5
+                                    }
+                                }]
                         }
                     }
                 });

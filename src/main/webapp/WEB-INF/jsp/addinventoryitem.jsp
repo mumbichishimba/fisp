@@ -41,15 +41,20 @@
                                 <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity" required="">
                             </div>
                             <div class="form-group">
-                                <label for="quantitytype">Quantity Type (Change to select)</label>
-                                <input type="text" class="form-control" id="quantitytype" name="quantitytype" placeholder="Quantity Type" required="">
-                            </div>
+                                <label for="quantitytype">Quantity Type</label>
+                                <select class="form-control" name="quantitytype" id="quantitytype">
+                                    <option value="KG">KG</option>
+                                    <option value="Mitres">Metres</option>
+                                    <option value="Count">Count</option>
+                                    <option value="Litres">Litres</option>
+                                </select>
+                            </div> 
                             <div class="form-group">
                                 <label for="supplier">Supplier</label>
                                 <input type="text" class="form-control" id="supplier" name="supplier" placeholder="Supplier" required="">
                             </div>
                             <div class="form-group">
-                                <label for="available">Available (Change to select)</label>
+                                <label for="available">Available</label>
                                 <select class="form-control" name="available" id="available" required="">
                                     <option value="1">Yes</option>
                                     <option value="2">No</option>
@@ -57,8 +62,14 @@
 
                             </div>
                             <div class="form-group">
-                                <label for="itemtype">Item Type (Select)</label>
-                                <input type="text" class="form-control" id="itemtype" name="itemtype" placeholder="Item Type" required="">
+                                <label for="itemtype">Item Type</label>
+                                <select class="form-control" name="itemtype" id="itemtype">
+                                    <option value="Consumable">Consumable</option>
+                                    <option value="Not Consumable">Not Consumable</option>
+                                    <option value="Planting">Planting</option>
+                                    <option value="Animal">Animal</option>
+                                    <option value="Tools">Tools</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-success btn-block" value="Submit" />
