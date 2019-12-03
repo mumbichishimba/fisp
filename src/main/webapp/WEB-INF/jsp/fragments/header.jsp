@@ -65,7 +65,7 @@
                         <a href="${contextPath}/inventory"><i class="fa fa-table fa-fw"></i>Implements</a>
                     </li>
                     <li>
-                        <a href="${contextPath}/users"><i class="fa fa-edit fa-fw"></i>Users</a>
+                        <a href="${contextPath}/users"><i class="fa fa-edit fa-fw"></i>Farmers</a>
                     </li>
                     
                 </ul>

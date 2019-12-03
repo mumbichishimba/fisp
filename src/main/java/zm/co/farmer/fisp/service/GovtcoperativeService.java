@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import zm.co.farmer.fisp.entity.Govtcoperative;
 import zm.co.farmer.fisp.repository.GovtcoperativeRepository;
+import zm.co.farmer.fisp.repository.UserRepository;
 
 /**
  *
@@ -20,13 +21,27 @@ import zm.co.farmer.fisp.repository.GovtcoperativeRepository;
 public class GovtcoperativeService {
     @Autowired
     private GovtcoperativeRepository govtcoperativeRepository;
+    @Autowired
+    private UserRepository userRepository;
     
     public List<Govtcoperative> getAllGovtcoperative(){
-        return Lists.newLinkedList(govtcoperativeRepository.findAll());
+        
+        List<Govtcoperative> g= Lists.newLinkedList(govtcoperativeRepository.findAll());
+        
+        for (int i = 0; i < g.size(); i++) {
+            g.get(i).setFarmernum(userRepository.findByCooperative(g.get(i)).size());            
+        }
+        
+        return g;
     }
     
     public Govtcoperative addGovtcoperative(Govtcoperative govtcoperative){
         return govtcoperativeRepository.save(govtcoperative);
+    }
+
+    public Govtcoperative getCooperativeById(Integer cooperativeid) {
+      
+        return govtcoperativeRepository.findById(cooperativeid).get();
     }
     
     

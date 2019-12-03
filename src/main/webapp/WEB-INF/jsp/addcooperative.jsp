@@ -18,9 +18,9 @@
         <br>
         <br>
         &nbsp;
-        <div class="panel panel-info">
+        <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="fa fa-angle-right"></i> Add Co-operative </h4><br>
+                <h4><i class="fa fa-angle-right"></i> Add Co-operative </h4>
             </div>
             <div class="panel-body">
                 <div class="showback">

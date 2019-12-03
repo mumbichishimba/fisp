@@ -19,7 +19,7 @@
         &nbsp;
         <div class="panel panel-default">
             <div class="panel-heading">
-              <h4><i class="fa fa-angle-right"></i>Co-operative </h4><br>
+              <h4><i class="fa fa-angle-right"></i>Co-operative </h4>
             </div>
             <div class="panel-body">
                 <div class="showback">
@@ -32,6 +32,7 @@
                                     <th>Name</th>
                                     <th>Date Created</th>
                                     <th>Location</th>
+                                    <th>No. of farmers</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,6 +41,7 @@
                                         <td>${u.name}</td>
                                         <td>${u.datecreated}</td>
                                         <td>${u.location}</td>
+                                        <td>${u.farmernum}</td>
                                     </tr>
                                 </c:forEach>
                             </tbody>

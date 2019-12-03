@@ -7,6 +7,7 @@ package zm.co.farmer.fisp.repository;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
+import zm.co.farmer.fisp.entity.Govtcoperative;
 import zm.co.farmer.fisp.entity.User;
 
 /**
@@ -22,5 +23,8 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     public List<User> findByGender(String gender);
 
     public User findByUsernameAndPassword(String username, String generateMD5);
+    
+    public List <User> findByCooperative(Govtcoperative g);
+    
     
 }

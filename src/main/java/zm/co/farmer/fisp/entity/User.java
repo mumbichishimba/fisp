@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -36,6 +37,8 @@ public class User {
     private Date dateofbirth;
     private String email;
     private int userrole;
+    @ManyToOne
+    private Govtcoperative cooperative;
 
     public User() {
     }
@@ -136,9 +139,18 @@ public class User {
         this.password = password;
     }
 
+    public Govtcoperative getCooperative() {
+        return cooperative;
+    }
+
+    public void setCooperative(Govtcoperative cooperative) {
+        this.cooperative = cooperative;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + ", password=" + password + ", othername=" + othername + ", gender=" + gender + ", address=" + address + ", city=" + city + ", dateofbirth=" + dateofbirth + ", email=" + email + ", userrole=" + userrole + '}';
-    }    
+        return "User{" + "id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", username=" + username + ", password=" + password + ", othername=" + othername + ", gender=" + gender + ", address=" + address + ", city=" + city + ", dateofbirth=" + dateofbirth + ", email=" + email + ", userrole=" + userrole + ", cooperative=" + cooperative + '}';
+    }
     
+
 }

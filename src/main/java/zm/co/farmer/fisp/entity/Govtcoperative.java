@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
@@ -27,6 +28,8 @@ public class Govtcoperative {
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date datecreated;
     private String location;
+    @Transient
+    private Integer farmernum;
 
     public Govtcoperative() {
     }
@@ -63,10 +66,20 @@ public class Govtcoperative {
         this.location = location;
     }
 
+    public Integer getFarmernum() {
+        return farmernum;
+    }
+
+    public void setFarmernum(Integer farmernum) {
+        this.farmernum = farmernum;
+    }
+
     @Override
     public String toString() {
-        return "Govtcoperative{" + "id=" + id + ", name=" + name + ", datecreated=" + datecreated + ", location=" + location + '}';
+        return "Govtcoperative{" + "id=" + id + ", name=" + name + ", datecreated=" + datecreated + ", location=" + location + ", farmernum=" + farmernum + '}';
     }
+    
+    
     
     
 }

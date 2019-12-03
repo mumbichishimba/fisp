@@ -21,7 +21,7 @@
         &nbsp;
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="fa fa-angle-right"></i> Users </h4>
+                <h4><i class="fa fa-angle-right"></i> Farmers </h4>
             </div>
             <div class="panel-body">
 
@@ -37,6 +37,7 @@
                                 <th>Gender</th>
                                 <th>Username</th>
                                 <th>Role</th>
+                                <th>Cooperative</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,12 +50,13 @@
                                     <td>${u.gender}</td>
                                     <td>${u.username}</td>
                                     <td>${u.userrole}</td>
+                                     <td>${u.cooperative.name}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
 
-                    <a href="${contextPath}/adduser" class="btn btn-success"> Add User</a><br/><br/>
+                    <a href="${contextPath}/adduser" class="btn btn-success"> Add Farmer</a><br/><br/>
                 </div>
 
             </div>
