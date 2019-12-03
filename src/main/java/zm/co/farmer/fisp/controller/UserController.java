@@ -60,7 +60,7 @@ public class UserController {
             @ModelAttribute("username") String username, @ModelAttribute("password") String password,
             @ModelAttribute("othername") String othername,
             @ModelAttribute("gender") String gender, @ModelAttribute("address") String address,
-            @ModelAttribute("city") String city, @ModelAttribute("dateofbirth") @DateTimeFormat(pattern = "yyyy-mm-dd") Date dateofbirth,
+            @ModelAttribute("city") String city, @ModelAttribute("dateofbirth") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateofbirth,
             @ModelAttribute("email") String email, @ModelAttribute("userrole") String userrole, @ModelAttribute("cooperative") Integer cooperativeid) {
         
         Govtcoperative govtcooperative = govtcoperativeService.getCooperativeById(cooperativeid);
