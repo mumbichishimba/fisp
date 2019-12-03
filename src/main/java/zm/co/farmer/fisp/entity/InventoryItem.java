@@ -5,18 +5,20 @@
  */
 package zm.co.farmer.fisp.entity;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  *
  * @author dhulfa.abdallah
  */
 @Entity
-@Table(name="fisp_inventoryitem")
+@Table(name="fisp_inventoryitem", uniqueConstraints={@UniqueConstraint(columnNames={"barcodenumber"})})
 public class InventoryItem {
     //create fields to be inside an inventory
     @Id
@@ -31,6 +33,7 @@ public class InventoryItem {
     private String batchid;
     private String barcodenumber;
     private Boolean available;
+    private Date dategivenout;
 
     public InventoryItem() {
     }
@@ -111,6 +114,14 @@ public class InventoryItem {
         this.available = available;
     }
 
+    public Date getDategivenout() {
+        return dategivenout;
+    }
+
+    public void setDategivenout(Date dategivenout) {
+        this.dategivenout = dategivenout;
+    }
+    
     @Override
     public String toString() {
         return "InventoryItem{" + "id=" + id + ", name=" + name + ", type=" + type + ", supplier=" + supplier + ", quantity=" + quantity + ", quantity_type=" + quantitytype + ", batchid=" + batchid + ", barcodenumber=" + barcodenumber + ", available=" + available + '}';

@@ -151,29 +151,37 @@ public class LoginController {
         model.addAttribute("yieldvalues", gson.toJson(values));
         model.addAttribute("year", Calendar.getInstance().get(Calendar.YEAR));
         model.addAttribute("max", max + ((int) (max * .1f)));
-        
+
         // Add Users
         List<User> users = userService.getAllUsers();
         int totalUsers = users.size();
         model.addAttribute("usertotal", totalUsers);
-        
+
         // Add Cooperatves
         List<Govtcoperative> cooperatives = govtcoperativeService.getAllGovtcoperative();
         int cooperativesTotal = cooperatives.size();
         model.addAttribute("cooperativesTotal", cooperativesTotal);
-        
+
+        // Get all inventory items
         List<InventoryItem> inventoryItems = inventoryService.getAllInventoryItems();
-        int available=0, given = 0;
-        
+        int available = 0, given = 0;
+
         for (InventoryItem inventoryItem : inventoryItems) {
-            if(inventoryItem.isAvailable()){
+            if (inventoryItem.isAvailable()) {
                 available++;
-            }else{
+            } else {
                 given++;
             }
-        }        
+        }
         model.addAttribute("available", available);
         model.addAttribute("given", given);
+
+        // Table report
+        List<String> lables = getInventoryTableReportLables();
+        List<Integer> tabvalues = getInventoryTableReportValues();
+        
+        model.addAttribute("lables", gson.toJson(lables));
+        model.addAttribute("tabvalues", gson.toJson(tabvalues));
 
         return "home";
     }
@@ -205,6 +213,42 @@ public class LoginController {
                 + "GROUP BY fy.crop;";
 
         return genericDataService.getQueryResultsAsHashmap(sql);
+    }
+
+    private List<String> getInventoryTableReportLables() throws SQLException {
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        List<String> data = new ArrayList<>();
+        
+        String sql = "SELECT DATE_FORMAT(f.dategivenout, '%M') as dategivenout, COUNT(*) AS total \n"
+                + "FROM fisp_inventoryitem f \n"
+                + "WHERE f.available = 0 AND DATE_FORMAT(f.dategivenout, '%Y') = "+year+" \n"
+                + "GROUP BY DATE_FORMAT(f.dategivenout, '%m')";
+        
+        List<HashMap> result = genericDataService.getQueryResultsAsHashmap(sql);
+        
+        for (HashMap hashMap : result) {
+            data.add(hashMap.get("dategivenout").toString());
+        }
+        
+        return data;
+    }
+
+    private List<Integer> getInventoryTableReportValues() throws SQLException {
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        List<Integer> data = new ArrayList<>();
+        
+        String sql = "SELECT DATE_FORMAT(f.dategivenout, '%M') as dategivenout, COUNT(*) AS total \n"
+                + "FROM fisp_inventoryitem f \n"
+                + "WHERE f.available = 0 AND DATE_FORMAT(f.dategivenout, '%Y') = "+year+" \n"
+                + "GROUP BY DATE_FORMAT(f.dategivenout, '%m')";
+        
+        List<HashMap> result = genericDataService.getQueryResultsAsHashmap(sql);
+        
+        for (HashMap hashMap : result) {
+            data.add(Integer.parseInt(hashMap.get("total").toString()));
+        }
+        
+        return data;
     }
 
 }

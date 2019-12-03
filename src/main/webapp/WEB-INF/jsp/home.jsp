@@ -45,8 +45,64 @@
             </div>
             <!--end quick info section -->
         </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Implements Issued
+                </div>
+                <div class="panel-body">
+                    <style>
+                        canvas {
+                            -moz-user-select: none;
+                            -webkit-user-select: none;
+                            -ms-user-select: none;
+                        }
+                    </style>
+                    <div id="container" style="width: 75%;">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <%@include file="fragments/footer.jsp" %>
         <%@include file="fragments/js.jsp" %>
+
+        <script src="${contextPath}/chart/Chart.min.js"></script>
+        <script src="${contextPath}/chart/utils.js"></script>
+        <script>
+            var color = Chart.helpers.color;
+            var barChartData = {
+                labels: ${lables},
+                datasets: [{
+                        label: 'Totals',
+                        backgroundColor: color(window.chartColors.lime).alpha(1).rgbString(),
+                        borderColor: window.chartColors.green,
+                        borderWidth: 1,
+                        data: ${tabvalues}
+                    }
+                ]
+
+            };
+
+            window.onload = function () {
+                var ctx = document.getElementById('canvas').getContext('2d');
+                window.myBar = new Chart(ctx, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: {
+                        responsive: true,
+                        legend: {
+                            position: 'bottom'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Implements'
+                        }
+                    }
+                });
+            };
+        </script>
+
     </body>
 </html>
