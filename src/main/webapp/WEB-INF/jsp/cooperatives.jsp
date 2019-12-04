@@ -56,5 +56,11 @@
 
         <%@include file="fragments/footer.jsp" %>
         <%@include file="fragments/js.jsp" %>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('#dataTable').DataTable();
+            });
+        </script>
     </body>
 </html>

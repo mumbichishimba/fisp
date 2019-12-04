@@ -26,8 +26,8 @@
             <div class="panel-body">
 
                 <div class="showback">
-                    
-                    <table class="table">
+
+                    <table class="table" id="dataTable">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -36,7 +36,6 @@
                                 <th>Email</th>
                                 <th>Gender</th>
                                 <th>Username</th>
-                                <th>Role</th>
                                 <th>Cooperative</th>
                             </tr>
                         </thead>
@@ -49,8 +48,7 @@
                                     <td>${u.email}</td>
                                     <td>${u.gender}</td>
                                     <td>${u.username}</td>
-                                    <td>${u.userrole}</td>
-                                     <td>${u.cooperative.name}</td>
+                                    <td>${u.cooperative.name}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>
@@ -65,5 +63,11 @@
 
         <%@include file="fragments/footer.jsp" %>
         <%@include file="fragments/js.jsp" %>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('#dataTable').DataTable();
+            });
+        </script>
     </body>
 </html>

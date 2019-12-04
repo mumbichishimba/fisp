@@ -28,7 +28,7 @@
                     <div class="table-responsive">
 
                         <form action="${contextPath}/senttofarmer" id="form">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>&nbsp;</th>
@@ -52,7 +52,7 @@
                                             <td>${a.quantity} ${a.quantitytype}</td>
                                             <td>${a.barcodenumber}</td>
                                             <td><c:if test="${a.available==false}">No</c:if> <c:if test="${a.available}"> Yes </c:if></td>
-                                        </tr>
+                                            </tr>
                                     </c:forEach>
 
                                 </tbody>
@@ -89,7 +89,9 @@
                 console.log($("#result").val());
                 $("#form").submit();
             }
-
+            $(document).ready(function () {
+                $('#dataTable').DataTable();
+            });
 
         </script>
     </body>

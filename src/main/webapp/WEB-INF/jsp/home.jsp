@@ -58,7 +58,7 @@
                             -ms-user-select: none;
                         }
                     </style>
-                    <div id="container" style="width: 75%;">
+                    <div id="container" style="width: 95%;">
                         <canvas id="canvas"></canvas>
                     </div>
                 </div>
