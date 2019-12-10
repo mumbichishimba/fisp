@@ -24,7 +24,7 @@ import zm.co.farmer.fisp.webservice.entity.InventoryResponse;
  */
 public class InventoryWebService {
 
-    public static final String IPADDRESS = "172.17.2.109";
+    public static final String IPADDRESS = "192.168.43.46";
 
     public InventoryResponse[] sendInventoryItemsToFarmer(InventoryItem[] inventoryItems) {
 
